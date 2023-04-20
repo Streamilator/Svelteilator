@@ -19,12 +19,15 @@ h1, h2, h3, h4, h5, h6 {
     padding: 30px;
     height: 100px;
     width: 100px;
-    margin-bottom: 10px;
+    transition: 0.3s;
+}
+
+.song:hover {
+    background-color: rgb(19, 19, 19);
 }
 
 .grid {
     display: grid;
-    column-gap: 1px;
-    row-gap: 10px;
+    gap: 10px;
     grid-template-columns: auto auto auto;
 }
