@@ -1,6 +1,23 @@
-<div class="container">
-	<h1>Welcome to SvelteKit</h1>
-	<p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>
-</div>
+<script>
+    import { get_songs } from "$lib/api.js";
+</script>
 
-<div class="song">h</div>
+<svelte:head>
+    <title>Home - Svelteilator</title>
+</svelte:head>
+
+<div class="container grid">
+	{#await get_songs()}
+        Loading...
+    {:then songs} 
+        {#each songs as song}
+           <div class="song">
+                <b>{song.name}</b>
+                <br>
+                <small>{song.author}</small>
+           </div> 
+        {/each}
+    {:catch error}
+        <code>{error}</code>
+    {/await}
+</div>

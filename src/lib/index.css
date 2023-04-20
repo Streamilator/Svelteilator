@@ -19,4 +19,12 @@ h1, h2, h3, h4, h5, h6 {
     padding: 30px;
     height: 100px;
     width: 100px;
+    margin-bottom: 10px;
+}
+
+.grid {
+    display: grid;
+    column-gap: 10px;
+    row-gap: 10px;
+    grid-template-columns: auto auto auto;
 }
