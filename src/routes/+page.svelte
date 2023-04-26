@@ -30,5 +30,5 @@
 <div class="fixed bottom-0 w-full h-[120px] p-[30px] justify-center text-center" style="background-color: rgb(29, 29, 29);">
     <b>nothing is playing</b>
     <input type="range" min="1" max="100" value="1" class="w-full h-[15px] slider" id="slider">
-    <Icon src={Play} solid class="w-[30px] h-[30px] text-center" />
+    <Icon src={Play} solid class="h-[30px] text-center" />
 </div>
