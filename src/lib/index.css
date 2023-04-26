@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -16,9 +20,6 @@ h1, h2, h3, h4, h5, h6 {
 .song {
     border-radius: 10px;
     background-color: rgb(29, 29, 29);
-    padding: 30px;
-    height: 100px;
-    width: 100px;
     transition: 0.3s;
 }
 
@@ -26,8 +27,29 @@ h1, h2, h3, h4, h5, h6 {
     background-color: rgb(19, 19, 19);
 }
 
-.grid {
-    display: grid;
-    gap: 10px;
-    grid-template-columns: auto auto auto;
+.slider {
+    -webkit-appearance: none;
+    background: rgb(19, 19, 19);
+    outline: none;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    border-radius: 100px;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: white;
+    cursor: pointer;
+    border-radius: 100px;
+}
+
+.slider::moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: white;
+    cursor: pointer;
+    border-radius: 100px;
 }
