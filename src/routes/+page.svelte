@@ -20,10 +20,10 @@
         {/each}
     {:then songs}
         {#each songs as song}
-           <div class="song w-auto h-fill p-[30px]" id={songs.length + 1} on:click={() => {
+           <div class="song w-auto h-fill p-[30px]" id={songs.id} on:click={() => {
                 play(this.id);
             }}>
-                <b class="text-2xl">{song.name}</b>
+                <b class="text-2xl">{song.title}</b>
                 <br>
                 <small class="text-lg">{song.author}</small>
            </div>
