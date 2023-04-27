@@ -38,5 +38,5 @@
 <div class="fixed bottom-0 w-full h-[120px] p-[30px] justify-center text-center" style="background-color: rgb(29, 29, 29);">
     <b>{$now_playing_title}</b> {$now_playing_author}
     <input type="range" min="1" max="100" value="1" class="w-full h-[10px] slider" id="slider">
-    <Icon src={Play} type="solid" class="h-[30px] text-center" />
+    <Icon src={Play} theme="solid" class="h-[30px] text-center" />
 </div>
