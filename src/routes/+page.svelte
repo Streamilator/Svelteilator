@@ -1,7 +1,8 @@
 <script>
-    import { get_songs } from "$lib/api.js";
+    import { get_songs, play } from "$lib/api.js";
     import { now_playing_title, now_playing_author } from "$lib/stores.js";
-    import { Icon, Play, Backward, Forward } from "svelte-hero-icons";
+    import { Icon } from "@steeze-ui/svelte-icon";
+    import { Play } from "@steeze-ui/heroicons";
 </script>
 
 <svelte:head>
@@ -11,7 +12,7 @@
 <div class="flex flex-col space-y-2 m-3">
 	{#await get_songs()}
         {#each new Array(20) as a}
-            <div class="song w-auto h-fill p-[30px]">
+            <div class="song-no-transition w-auto h-fill p-[30px]">
                 <b class="text-2xl blur">Lorem ispum dolor sit amet</b>
                 <br>
                 <small class="text-lg blur">Lorem ispum</small>
@@ -19,8 +20,8 @@
         {/each}
     {:then songs}
         {#each songs as song}
-           <div class="song w-auto h-fill p-[30px]" on:click={() => {
-                alert("no");
+           <div class="song w-auto h-fill p-[30px]" id={songs.length + 1} on:click={() => {
+                play(this.id);
             }}>
                 <b class="text-2xl">{song.name}</b>
                 <br>
@@ -37,6 +38,5 @@
 <div class="fixed bottom-0 w-full h-[120px] p-[30px] justify-center text-center" style="background-color: rgb(29, 29, 29);">
     <b>{$now_playing_title}</b> {$now_playing_author}
     <input type="range" min="1" max="100" value="1" class="w-full h-[10px] slider" id="slider">
-    <Icon src={Backward} solid class="h-[20px]" />
-    <Icon src={Play} solid class="h-[30px] text-center" />
+    <Icon src={Play} type="solid" class="h-[30px] text-center" />
 </div>

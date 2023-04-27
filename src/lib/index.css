@@ -23,6 +23,11 @@ h1, h2, h3, h4, h5, h6 {
     transition: 0.3s;
 }
 
+.song-no-transition {
+    border-radius: 10px;
+    background-color: rgb(29, 29, 29);
+}
+
 .song:hover {
     background-color: rgb(19, 19, 19);
 }
