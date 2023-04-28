@@ -2,7 +2,7 @@
     import { get_songs, play } from "$lib/api.js";
     import { now_playing_title, now_playing_author } from "$lib/stores.js";
     import { Icon } from "@steeze-ui/svelte-icon";
-    import { Play } from "@steeze-ui/heroicons";
+    import { Play, Pause } from "@steeze-ui/heroicons";
 </script>
 
 <svelte:head>
