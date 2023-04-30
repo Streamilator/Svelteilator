@@ -1,3 +1,5 @@
+var audio = { pause: () => { return; } };
+
 /**
 * Gets a list of songs
 */
@@ -21,6 +23,7 @@ export async function get_songs() {
 * @param {number} id The song ID to play
 */
 export function play(id) {
-    const audio = new Audio(`https://semi-api.streamilator-01z.pages.dev/songs/${id}.mp3`);
+    audio.pause();
+    audio = new Audio(`https://semi-api.streamilator-01z.pages.dev/songs/${id}.mp3`);
     audio.play();
 }

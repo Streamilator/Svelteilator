@@ -21,6 +21,9 @@
     {:then songs}
         {#each songs as song}
            <div class="song w-auto h-fill p-[30px]" id={song.id} on:click={() => {
+                now_playing_title.set(song.title);
+                now_playing_author.set(song.author);
+
                 play(song.id);
             }}>
                 <b class="text-2xl">{song.title}</b>
